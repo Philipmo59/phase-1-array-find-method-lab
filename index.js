@@ -62,10 +62,11 @@ const record = [
 
 
   function superbowlWin(arrayOfObjects){
-    individualObject = arrayOfObjects.map((line) =>{
-        const result = line.find('result')
-        console.log(line.year)
-    })
-  }
+    if (arrayOfObjects.find(isWin)){
+        return (arrayOfObjects.find(isWin).year)
+    }
+}
 
-  superbowlWin(record)
+  function isWin(record_item){
+    return record_item.result === "W"
+  }
